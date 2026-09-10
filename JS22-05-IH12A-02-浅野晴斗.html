@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国宝城</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #1a2a1a;
+            color: #f5e6c8;
+        }
+        .site-header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .site-header ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .site-header a {
+            color: #f5e6c8;
+            text-decoration: none;
+        }
+        .site-header a:hover {
+            text-decoration: underline;
+        }
+        #himeji-map {
+            margin: 2rem auto;
+            max-width: 100%;
+            height: 500px;
+            width: 800px;
+        }
+        #hikone-map {
+            margin: 2rem auto;
+            max-width: 100%;
+            height: 500px;
+            width: 800px;
+        }
+        #inuyama-map {
+            margin: 2rem auto;
+            max-width: 100%;
+            height: 500px;
+            width: 800px;
+        }
+        #matumoto-map {
+            margin: 2rem auto;
+            max-width: 100%;
+            height: 500px;
+            width: 800px;
+        }
+        #matsue-map {
+            margin: 2rem auto;
+            max-width: 100%;
+            height: 500px;
+            width: 800px;
+        }
+    </style>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAKLjisxFelKwIl1_G6MiEO9-ya7Twr5s&callback=console.debug&libraries=maps,marker&v=beta"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>国宝城</h1>
+        <nav>
+            <ul>
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#himeji">姫路城</a></li>
+                <li><a href="#hikone">彦根城</a></li>
+                <li><a href="#inuyama">犬山城</a></li>
+                <li><a href="#matumoto">松本城</a></li>
+                <li><a href="#matsue">松江城</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 id="himeji">姫路城とは</h2>
+        <div id="himeji-tab">
+            <ul>
+                <li><a href="#himeji-tab1">姫路城とは</a></li>
+                <li><a href="#himeji-tab2">姫路城のアクセス</a></li>
+            </ul>
+            <div id="himeji-tab1">姫路城は、兵庫県にある城で、日本の国宝です。<br>
+            壁全体が真っ白な漆喰で塗られており、シラサギが羽を広げたように見えることから「白鷺城（しらさぎじょう）」の愛称で親しまれています。1993年に日本で初めてユネスコの世界文化遺産に登録されました。</div>
+            <div id="himeji-tab2">JR・山陽電鉄「姫路駅」北口から徒歩約15〜20分。<br>
+                姫路駅北口バスターミナルから神姫バスに乗車し、「大手門前」バス停下車すぐ。</div>
+        </div>
+        <div id="himeji-map"></div>
+
+        <h2 id="hikone">彦根城とは</h2>
+        <div id="hikone-tab">
+            <ul>
+                <li><a href="#hikone-tab1">彦根城とは</a></li>
+                <li><a href="#hikone-tab2">彦根城のアクセス</a></li>
+            </ul>
+            <div id="hikone-tab1">彦根城は、滋賀県にある城で、日本の国宝です。<br>
+            多様なデザインの屋根（破風・はふ）をパズルのように美しく組み合わせた、変化に富んだ外観が特徴です。天守だけでなく、城を囲む二重のお堀や巨大な石垣、武具を保管した櫓（やぐら）などが当時のまま綺麗に残っています。</div>
+            <div id="hikone-tab2">JR琵琶湖線・近江鉄道「彦根駅」西口から徒歩約15分。<br>
+            土日祝日や観光シーズンには、彦根駅前から彦根ご城下巡りバスの運行もあります。</div>
+        </div>
+        <div id="hikone-map"></div>
+
+        <h2 id="inuyama">犬山城とは</h2>
+        <div id="inuyama-tab">
+            <ul>
+                <li><a href="#inuyama-tab1">犬山城とは</a></li>
+                <li><a href="#inuyama-tab2">犬山城のアクセス</a></li>
+            </ul>
+            <div id="inuyama-tab1">犬山城は、愛知県にある城で、日本の国宝です。<br>
+            木曽川沿いの小高い山の上に築かれており、川を天然の堀として利用しています。天守の最上階には外に出てぐるりと一周できるベランダ（廻縁・まわりえん）があり、そこからの絶景が魅力です。</div>
+            <div id="inuyama-tab2">名鉄「犬山遊園駅」西口から木曽川沿いを歩いて徒歩約15分。<br>
+            名鉄「犬山駅」西口から城下町（本町通り）を散策しながら徒歩約20分。</div>
+        </div>
+        <div id="inuyama-map"></div>
+
+        <h2 id="matumoto">松本城とは</h2>
+        <div id="matumoto-tab">
+            <ul>
+                <li><a href="#matumoto-tab1">松本城とは</a></li>
+                <li><a href="#matumoto-tab2">松本城のアクセス</a></li>
+            </ul>
+            <div id="matumoto-tab1">松本城は、長野県にある城で、日本の国宝です。<br>
+            白い姫路城とは対照的に、黒い漆（うるし）で塗られた板張りの外壁が特徴で、「烏城（からすじょう）」とも呼ばれます。北アルプスの山々を背景に、水堀に映る姿は絵画のような美しさです。</div>
+            <div id="matumoto-tab2">JR「松本駅」お城口から徒歩約15〜20分。<br>
+            松本駅お城口より美ヶ原温泉線などの路線バス、または周遊バス「タウンスニーカー（北コース）」に乗車し、「松本城・市役所前」バス停下車すぐ。</div>
+        </div>
+        <div id="matumoto-map"></div>
+
+        <h2 id="matsue">松江城とは</h2>
+        <div id="matsue-tab">
+            <ul>
+                <li><a href="#matsue-tab1">松江城とは</a></li>
+                <li><a href="#matsue-tab2">松江城のアクセス</a></li>
+            </ul>
+            <div id="matsue-tab1">松江城は、島根県にある城で、日本の国宝です。<br>
+            2015年に国宝へ指定された一番新しい国宝天守です。黒い雨除けの板で覆われた重厚な外観と、屋根のてっぺんにある日本現存最大級の「しゃちほこ」が存在感を放ちます。</div>
+            <div id="matsue-tab2">JR「松江駅」北口より観光ループバス「ぐるっと松江レイクライン」に乗車し、約10分の「国宝松江城（大手前）」バス停下車すぐ。<br>
+            一畑電車「松江しんじ湖温泉駅」からは徒歩約20分、または市営バスで約5分。</div>
+        </div>
+        <div id="matsue-map"></div>
+    </main>
+    <script>
+        function initHimejiMap() {
+            const himejiPos = { lat: 34.83948352452416, lng:  134.69389504278996 };
+            const himejiMap = new google.maps.Map(document.getElementById('himeji-map'), {
+                zoom: 15,
+                center: himejiPos
+            });
+            const marker = new google.maps.Marker({
+                position: himejiPos,
+                map: himejiMap,
+                title: "姫路城"
+            });
+            const infoWindow = new google.maps.InfoWindow({
+            content: "<h1>姫路城</h1><p>兵庫県姫路市</p>"
+            });
+            marker.addListener("click", () => {
+            infoWindow.open(himejiMap, marker);
+            });
+            himejiMap.addListener("click", () => {
+            infoWindow.close();
+            });
+        }
+
+        function initHikoneMap() {
+            const hikonePos = { lat: 35.2765, lng: 136.2516 };
+            const hikoneMap = new google.maps.Map(document.getElementById('hikone-map'), {
+                zoom: 15,
+                center: hikonePos,
+            });
+            const marker = new google.maps.Marker({
+                position: hikonePos,
+                map: hikoneMap,
+                title: "彦根城"
+            });
+            const infoWindow = new google.maps.InfoWindow({
+            content: "<h1>彦根城</h1><p>滋賀県彦根市</p>"
+            });
+            marker.addListener("click", () => {
+            infoWindow.open(hikoneMap, marker);
+            });
+            hikoneMap.addListener("click", () => {
+            infoWindow.close();
+            });
+        }
+
+        function initInuyamaMap() {
+            const inuyamaPos = { lat: 35.388361726795466, lng: 136.93917656274638 };
+            const inuyamaMap = new google.maps.Map(document.getElementById('inuyama-map'), {
+                zoom: 15,
+                center: inuyamaPos,
+            });
+            const marker = new google.maps.Marker({
+                position: inuyamaPos,
+                map: inuyamaMap,
+                title: "犬山城"
+            });
+            const infoWindow = new google.maps.InfoWindow({
+            content: "<h1>犬山城</h1><p>愛知県犬山市</p>"
+            });
+            marker.addListener("click", () => {
+            infoWindow.open(inuyamaMap, marker);
+            });
+            inuyamaMap.addListener("click", () => {
+            infoWindow.close();
+            });
+        }
+
+        function initMatumotoMap() {
+            const matumotoPos = { lat: 36.23865344471068, lng: 137.96886711972655 };
+            const matumotoMap = new google.maps.Map(document.getElementById('matumoto-map'), {
+                zoom: 15,
+                center: matumotoPos,
+            });
+            const marker = new google.maps.Marker({
+                position: matumotoPos,
+                map: matumotoMap,
+                title: "松本城"
+            });
+            const infoWindow = new google.maps.InfoWindow({
+            content: "<h1>松本城</h1><p>長野県松本市</p>"
+            });
+            marker.addListener("click", () => {
+            infoWindow.open(matumotoMap, marker);
+            });
+            matumotoMap.addListener("click", () => {
+            infoWindow.close();
+            });
+        }
+
+        function initMatsueMap() {
+            const matsuePos = { lat: 35.475209, lng: 133.050677 };
+            const matsueMap = new google.maps.Map(document.getElementById('matsue-map'), {
+                zoom: 15,
+                center: matsuePos,
+            });
+            const marker = new google.maps.Marker({
+                position: matsuePos,
+                map: matsueMap,
+                title: "松江城"
+            });
+            const infoWindow = new google.maps.InfoWindow({
+            content: "<h1>松江城</h1><p>島根県松江市</p>"
+            });
+            marker.addListener("click", () => {
+            infoWindow.open(matsueMap, marker);
+            });
+            matsueMap.addListener("click", () => {
+            infoWindow.close();
+            });
+        }
+
+        window.addEventListener("load", () => {
+            initHimejiMap();
+            initHikoneMap();
+            initInuyamaMap();
+            initMatumotoMap();
+            initMatsueMap();
+        });
+
+        $(function(){
+            $('#himeji-tab').tabs();
+            $('#hikone-tab').tabs();
+            $('#inuyama-tab').tabs();
+            $('#matumoto-tab').tabs();
+            $('#matsue-tab').tabs();
+        });
+    </script>
+</body>
+</html>
